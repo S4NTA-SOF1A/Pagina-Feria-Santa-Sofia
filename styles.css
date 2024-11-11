@@ -1,0 +1,407 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Estilos para el menú */
+.menu {
+    background-color: #1a1a2e;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra la imagen y los elementos */
+}
+
+.menu-logo {
+    margin-right: auto; /* Alinea el logotipo al lado izquierdo */
+}
+
+.menu-logo .logo {
+    width: 50px; /* Tamaño del logotipo */
+    height: auto;
+    margin: 10px 20px;
+}
+
+.menu > ul > li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+
+.menu a:hover {
+    background-color: #0f3460;
+}
+
+/* Estilos para submenús */
+.menu ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #16213e;
+    display: none;
+    min-width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul li:hover > ul {
+    display: block;
+}
+
+.menu ul ul li {
+    position: relative;
+}
+
+.menu ul ul ul {
+    left: 100%;
+    top: 0;
+}
+
+/* Contenedor principal */
+.content {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.content img {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards; /* Aplicación de animación */
+    animation-delay: 0.5s; /* Aparece un poco después del título */
+
+}
+
+.content .text {
+    flex: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content .text h2 {
+    font-size: 2em;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 1.5s ease-out forwards; /* Efecto de aparición */
+}
+
+.content .text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Contenedor principal de la sección Hero */
+.hero-container {
+    display: flex;
+    justify-content: space-around; /* Centrar las imágenes */
+    align-items: center;
+    gap: 10px; /* Separación reducida entre imágenes */
+    flex-wrap: nowrap; /* Evitar el ajuste en varias líneas */
+    padding: 10px;
+}
+/* Estilo del Hero */
+.hero {
+    position: relative;
+    width: 350px; /* Reduce el ancho según sea necesario */
+    height: 250px;
+    perspective: 1000px; /* Agrega perspectiva para el efecto 3D */
+    margin: 0 auto;
+    padding: 10px; /* Reduce el padding para hacer la sección más compacta */
+    overflow: inherit;
+}
+
+
+
+/* Estilo de la tarjeta del Hero */
+.hero-card {
+    position: relative;
+    width: 100%;
+    height: auto; /* Permite que la altura se ajuste automáticamente al contenido */
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+
+/* Efecto al pasar el cursor */
+.hero:hover .hero-card {
+    transform: rotateY(180deg); /* Gira la tarjeta en 180 grados */
+}
+
+/* Cara frontal de la tarjeta */
+.hero-front,
+.hero-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara posterior cuando no está activa */
+}
+
+/* Imagen en la cara frontal */
+.hero-front .hero-image {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: auto; /* La altura se ajusta automáticamente */
+    max-height: 250px; /* Establece una altura máxima más pequeña para la imagen */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Cara posterior de la tarjeta (con el texto) */
+.hero-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente */
+    min-height: 100%; /* Asegura que la parte posterior tenga al menos la misma altura que la imagen */
+    background: rgb(9, 15, 72); /* Fondo semitransparente */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    padding: 10px; /* Ajusta el padding para un tamaño más compacto */
+    text-align: center;
+}
+
+/* Estilo del texto en la parte posterior */
+.hero-text {
+    font-size: 1em; /* Tamaño base del texto */
+    max-width: 90%; /* Limita el ancho del texto para que no ocupe el 100% */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    line-height: 1.2; /* Ajusta el interlineado para mejor legibilidad */
+    padding: 5px; /* Espacio alrededor del texto */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .content img {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+}
+
+/*SECCION DE COMENTARIOS*/
+#comments-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#comments-section h2, #comments-section h3 {
+    text-align: center;
+    color: white;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#commentForm input, #commentForm textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#commentForm button {
+    background-color: #21214c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#commentForm button:hover {
+    background-color: #053a80;
+}
+
+#commentsList {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: rgba(1, 3, 42, 0.168);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1; /* Aseguramos que cada comentario individual tenga un z-index bajo */
+}
+
+.comment h4 {
+    margin: 0;
+    cursor: pointer;
+    color: white;
+}
+
+.comment p {
+    display: none; /* Ocultar comentario por defecto */
+    margin: 5px 0 0;
+    background-color: #0c074e;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Mostrar el comentario por encima de todo */
+}
+
+/* Mostrar el comentario cuando se pasa el cursor sobre el nombre */
+.comment:hover p {
+    display: block;
+    z-index: 999;; /* Asegurarse de que el comentario esté por encima de otros */
+    color: white;
+}
+
+/* Footer */
+/* Asegurando que todo el contenido ocupe al menos el 100% de la altura de la página */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Para que el contenido crezca automáticamente y ocupe el espacio entre el header y el footer */
+main {
+    flex: 1;
+}
+
+/* Footer Sticky */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0; /* Evita que el footer se colapse o se reduzca */
+}
+
+
+/* Social Links */
+.social {
+    text-align: center;
+    padding: 20px 0;
+    color: hwb(0 100% 0%);
+    background:rgba(0, 0, 0, 0.381);
+}
+
+.social h2 {
+    font-size: 24px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: hsl(0, 100%, 99%);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.social-links a:hover {
+    background-color: #00000034;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+    .content {
+        padding: 30px;
+    }
+    .content img {
+        width: 45%;
+    }
+    .content .text h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column; /* Ajusta el menú en columnas en pantallas pequeñas */
+    }
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .content img {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+    .content .text h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 20px;
+    }
+    .content .text h2 {
+        font-size: 1.4em;
+    }
+    .content .text p {
+        font-size: 1em;
+    }
+}

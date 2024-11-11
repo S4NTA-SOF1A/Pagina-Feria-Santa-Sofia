@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Avanzada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Menú con submenús -->
+    <nav class="menu">
+        <ul>
+            <li class="menu-logo">
+                <img src="images/log.png" alt="Logotipo" class="logo">
+            </li>
+            <li><a href="#">INICIO</a></li>
+            <li><a href="index2.html">MATEMATICAS</a>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal con imagen y texto -->
+    <div class="content">
+        <img src="images/22919fcc-9a75-4473-8bff-d7619365f2d3.jpg" alt="Imagen descriptiva">
+        <div class="text">
+            <h2>🌱 Guardianes de la tierra 🌏<br> un futuro sostenible: I Proyecto Ecológico 2024 🌱</h2>
+            <p>La Institución Educativa Santa Sofía se convirtió en el epicentro de la acción ambiental al desarrollarse el I PROYECTO ECOLÓGICO, Este proyecto unió a las 12 aulas del nivel secundaria y docentes aliados, consolidándose como un espacio de aprendizaje, reflexión e inspiración para la construcción de un futuro más sostenible. 🌍💚. </p>
+            <p>Inspirados en la metáfora de las semillas que germinan y se expanden formando redes resilientes, el proyecto tuvo como objetivo fomentar la conciencia y la responsabilidad ambiental asi como también desarrollar habilidades de trabajo en equipo y liderazgo entre los estudiantes e implementar acciones concretas que mejoren la sostenibilidad de nuestra casa de estudios </p>
+            <p>El evento contó con la valiosa participación de estudiantes, quienes compartieron sus conocimientos y experiencias, motivando a los demás a adoptar prácticas sostenibles en su vida diaria.  🌿♻️</p>
+        </div>
+    </div>
+
+        <!-- Sección Hero -->
+        <div class="hero-container">
+            <!-- Primera tarjeta Hero -->
+                <div class="hero">
+                    <div class="hero-card">
+                        <div class="hero-front">
+                           <img src="images/header.jpeg" alt="Imagen 1" class="hero-image">
+                        </div>
+                        <div class="hero-back">
+                            <p class="hero-text">Dichas actividades del proyecto ecológico han sido posibles gracias a la invaluable colaboración de los docentes, 
+                                quienes no solo han brindado sus conocimientos especializados, 
+                                sino que también han fomentado un ambiente de aprendizaje colaborativo que ha enriquecido la experiencia de todos los participantes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+            <!-- Segunda tarjeta Hero -->
+                <div class="hero">
+                    <div class="hero-card">
+                        <div class="hero-front">
+                             <img src="images/WhatsApp Image 2024-10-14 at 4.32.45 PM.jpeg" alt="Imagen 2" class="hero-image">
+                        </div>
+                        <div class="hero-back">
+                            <p class="hero-text">Gracias al esfuerzo de los estudiantes, los jardines del proyecto han cobrado vida con una exuberante vegetación. 
+                                Este proceso les ha permitido poner en práctica conocimientos teóricos y 
+                                desarrollar habilidades prácticas en horticultura.</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tercera tarjeta Hero -->
+                 <div class="hero">
+                    <div class="hero-card">
+                        <div class="hero-front">
+                            <img src="images/tecnolo.jpeg" alt="Imagen 3" class="hero-image">
+                        </div>
+                        <div class="hero-back">
+                        <p class="hero-text">La institución educativa Santa Sofía fomenta la aplicación práctica de los conocimientos adquiridos. En este sentido, 
+                            los estudiantes están utilizando las tecnologías disponibles para desarrollar soluciones concretas a problemas cotidianos, 
+                            como la optimización del riego en los jardines y el diseño de contenedores de residuos más eficientes. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <main>
+                <!-- Hero section y otros contenidos -->
+                
+                <!-- Sección de comentarios -->
+                <section id="comments-section">
+                    <h2>Deja tu comentario</h2>
+                    
+                    <form id="commentForm">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        
+                        <label for="comment">Comentario:</label>
+                        <textarea id="comment" name="comment" placeholder="Escribe tu comentario aquí" required></textarea>
+                        
+                        <button type="submit">Enviar comentario</button>
+                    </form>
+                    
+                    <h3>Comentarios:</h3>
+                    <div id="commentsList"></div>
+                </section>
+            </main>
+
+               <!-- Social and Contact -->
+    <section class="social">
+        <h2>Conéctate con Nosotros</h2>
+        <div class="social-links">
+            <a href="https://web.facebook.com/institucionsantasofia?mibextid=ZbWKwL&_rdc=1&_rdr" target="_blank">Facebook</a>
+            <a href="mailto:contacto@colegio.com">Correo Electrónico</a>
+        </div>
+    </section>
+    <main>
+     
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Colegio. Todos los derechos reservados. <br>Creador: Lender Aldair Chero Chero</p>
+    </footer>
+        
+
+            <script>
+                document.getElementById('commentForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Obtener los valores del formulario
+                    const name = document.getElementById('name').value;
+                    const comment = document.getElementById('comment').value;
+                    
+                    // Crear un nuevo elemento div para el comentario
+                    const commentDiv = document.createElement('div');
+                    commentDiv.classList.add('comment');
+                    
+                    // Añadir el contenido del comentario
+                    commentDiv.innerHTML = `<h4>${name}</h4><p>${comment}</p>`;
+                    
+                    // Añadir el comentario a la lista de comentarios
+                    document.getElementById('commentsList').appendChild(commentDiv);
+                    
+                    // Limpiar el formulario
+                    document.getElementById('commentForm').reset();
+                });
+            </script>
+
+</body>
+</html>

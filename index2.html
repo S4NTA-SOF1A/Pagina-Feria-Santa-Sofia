@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Avanzada para Colegio</title>
+    <link rel="stylesheet" href="stylesmat.css">
+</head>
+<body>
+
+    <!-- Menú con submenús -->
+    <nav class="menu">
+        <ul>
+            <li class="menu-logo">
+                <img src="images/log.png" alt="Logotipo" class="logo">
+            </li>
+            <li><a href="Index.html">INICIO</a></li>
+            <li><a href="index2.html">MATEMATICAS</a>
+            
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Bienvenidos al apartado de Matematicas</h1>
+    </header>
+
+    <section id="video" class="section">
+        <h2>Video de Introducción</h2>
+        <video controls>
+            <source src="videos/WhatsApp Video 2024-11-08 at 5.28.23 PM.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </section>
+
+    <section id="info" class="section">
+        <h2>🌱 Innovación En Gestión De Residuos Con Geogebra 🌱</h2>
+            <p>En nuestra institución, nos comprometemos a contribuir a la solución de la problemática ambiental que enfrentamos hoy en día. Con orgullo, destacamos el trabajo arduo y dedicado de nuestros maestros, quienes impulsan la innovación y la creatividad en nuestros estudiantes 🌱🌍🌞.</p> 
+            <p>Ejemplo de liderazgo ambiental: Profesor Luis Alberto Dioses Benítez 🧑🏻‍🏫🌎.</p> 
+            <p>A través de la plataforma virtual GeoGebra, el Profesor Dioses Benítez inspira a nuestros estudiantes a diseñar soluciones sostenibles utilizando formas geométricas innovadoras ✊🏻🪴.</p>
+            <p>¡Juntos, estamos sembrando un futuro verde! 🌳💪</p> 
+            <p>institución se enfoca en fomentar la educación ambiental y el liderazgo en nuestros estudiantes 🌎. ¡Únete a nosotros en esta misión</p>
+    </section>
+
+    <section id="galeria" class="section">
+        <h2>Galería de Fotos</h2>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="slide">
+                    <img src="images/Geo1.jpeg" alt="Foto 1">
+                    <div class="description">Los alumnos estan diseñando un recolector de basura a travez de la aplicacion de GeoGebra</div>
+                </div>
+                <div class="slide">
+                    <img src="images/geo2.jpeg" alt="Foto 2">
+                    <div class="description">Descripción de Foto 2</div>
+                </div>
+                <div class="slide">
+                    <img src="images/geo3.jpeg" alt="Foto 3">
+                    <div class="description">Descripción de Foto 3</div>
+                </div>
+                <div class="slide">
+                    <img src="images/geo4.jpeg" alt="Foto 4">
+                    <div class="description">Descripción de Foto 4</div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+    
+    
+
+    <section id="recursos" class="section">
+        <h2>Recursos y Documentos</h2>
+        <ul>
+            <li><a href="documentos/scratch.pdf" target="_blank">TRABAJOS HECHOS CON SCRATCH</a></li>
+            <li><a href="documento2.pdf" target="_blank">Reglamento Escolar</a></li>
+            <li><a href="documento3.pdf" target="_blank">Calendario Académico</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Colegio Ejemplar. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script>
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-container .slide');
+            const totalSlides = slides.length;
+        
+            // Ajuste del índice para bucle
+            currentSlide = (index + totalSlides) % totalSlides;
+        
+            // Mover el carrusel
+            const offset = -currentSlide * 100;
+            document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+        }
+        
+        function moveSlide(step) {
+            showSlide(currentSlide + step);
+        }
+        
+        // Cambio automático de diapositivas cada 5 segundos
+        setInterval(() => moveSlide(1), 5000);
+    </script>
+        
+        
+</body>
+</html>
